@@ -37,21 +37,27 @@
             this.pfmDataSet = new PFM.pfmDataSet();
             this.input_lengthTableAdapter = new PFM.pfmDataSetTableAdapters.input_lengthTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.fKoutputlenghtinputlength1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.output_lenghtTableAdapter = new PFM.pfmDataSetTableAdapters.output_lenghtTableAdapter();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.sizesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sizesTableAdapter = new PFM.pfmDataSetTableAdapters.sizesTableAdapter();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idinputDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.l1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.l2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.l3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ltxtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKoutputlenghtinputlength1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.output_lenghtTableAdapter = new PFM.pfmDataSetTableAdapters.output_lenghtTableAdapter();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sizesTableAdapter = new PFM.pfmDataSetTableAdapters.sizesTableAdapter();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.sortBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sortTableAdapter = new PFM.pfmDataSetTableAdapters.sortTableAdapter();
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputlengthBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pfmDataSet)).BeginInit();
@@ -59,6 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.fKoutputlenghtinputlength1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sizesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sortBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -130,39 +138,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(354, 433);
             this.dataGridView2.TabIndex = 4;
             // 
-            // fKoutputlenghtinputlength1BindingSource
-            // 
-            this.fKoutputlenghtinputlength1BindingSource.DataMember = "FK_output_lenght_input_length1";
-            this.fKoutputlenghtinputlength1BindingSource.DataSource = this.inputlengthBindingSource;
-            // 
-            // output_lenghtTableAdapter
-            // 
-            this.output_lenghtTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.wDataGridViewTextBoxColumn,
-            this.hDataGridViewTextBoxColumn,
-            this.txtDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.sizesBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(502, 12);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(276, 433);
-            this.dataGridView3.TabIndex = 5;
-            // 
-            // sizesBindingSource
-            // 
-            this.sizesBindingSource.DataMember = "sizes";
-            this.sizesBindingSource.DataSource = this.pfmDataSet;
-            // 
-            // sizesTableAdapter
-            // 
-            this.sizesTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
@@ -205,6 +180,30 @@
             this.ltxtDataGridViewTextBoxColumn.HeaderText = "l_txt";
             this.ltxtDataGridViewTextBoxColumn.Name = "ltxtDataGridViewTextBoxColumn";
             // 
+            // fKoutputlenghtinputlength1BindingSource
+            // 
+            this.fKoutputlenghtinputlength1BindingSource.DataMember = "FK_output_lenght_input_length1";
+            this.fKoutputlenghtinputlength1BindingSource.DataSource = this.inputlengthBindingSource;
+            // 
+            // output_lenghtTableAdapter
+            // 
+            this.output_lenghtTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.wDataGridViewTextBoxColumn,
+            this.hDataGridViewTextBoxColumn,
+            this.txtDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.sizesBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(502, 12);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(276, 211);
+            this.dataGridView3.TabIndex = 5;
+            // 
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
@@ -233,11 +232,65 @@
             this.txtDataGridViewTextBoxColumn.HeaderText = "txt";
             this.txtDataGridViewTextBoxColumn.Name = "txtDataGridViewTextBoxColumn";
             // 
+            // sizesBindingSource
+            // 
+            this.sizesBindingSource.DataMember = "sizes";
+            this.sizesBindingSource.DataSource = this.pfmDataSet;
+            // 
+            // sizesTableAdapter
+            // 
+            this.sizesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn3,
+            this.sDataGridViewTextBoxColumn,
+            this.txtDataGridViewTextBoxColumn1});
+            this.dataGridView4.DataSource = this.sortBindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(503, 230);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(275, 215);
+            this.dataGridView4.TabIndex = 6;
+            // 
+            // sortBindingSource
+            // 
+            this.sortBindingSource.DataMember = "sort";
+            this.sortBindingSource.DataSource = this.pfmDataSet;
+            // 
+            // sortTableAdapter
+            // 
+            this.sortTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn3.Width = 30;
+            // 
+            // sDataGridViewTextBoxColumn
+            // 
+            this.sDataGridViewTextBoxColumn.DataPropertyName = "s";
+            this.sDataGridViewTextBoxColumn.HeaderText = "s";
+            this.sDataGridViewTextBoxColumn.Name = "sDataGridViewTextBoxColumn";
+            this.sDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // txtDataGridViewTextBoxColumn1
+            // 
+            this.txtDataGridViewTextBoxColumn1.DataPropertyName = "txt";
+            this.txtDataGridViewTextBoxColumn1.HeaderText = "txt";
+            this.txtDataGridViewTextBoxColumn1.Name = "txtDataGridViewTextBoxColumn1";
+            // 
             // RaspParamsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 478);
+            this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -252,6 +305,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.fKoutputlenghtinputlength1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sizesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sortBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,5 +335,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.BindingSource sortBindingSource;
+        private pfmDataSetTableAdapters.sortTableAdapter sortTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtDataGridViewTextBoxColumn1;
     }
 }

@@ -19,6 +19,8 @@ namespace PFM
 
         private void RaspParamsForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pfmDataSet.sort". При необходимости она может быть перемещена или удалена.
+            this.sortTableAdapter.Fill(this.pfmDataSet.sort);
             // TODO: This line of code loads data into the 'pfmDataSet.sizes' table. You can move, or remove it, as needed.
             this.sizesTableAdapter.Fill(this.pfmDataSet.sizes);
             // TODO: This line of code loads data into the 'pfmDataSet.output_lenght' table. You can move, or remove it, as needed.
@@ -41,6 +43,7 @@ namespace PFM
 
                 this.output_lenghtTableAdapter.Update(this.pfmDataSet);
                 this.sizesTableAdapter.Update(this.pfmDataSet);
+                this.sortTableAdapter.Update(this.pfmDataSet);
 
                 this.Hide();
                 MainForm MainForm = new MainForm();

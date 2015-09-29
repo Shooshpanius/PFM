@@ -286,26 +286,52 @@ namespace PFM
 
                             pfmDataSet.output_lenghtRow out_rasp = pfmDataSet.output_lenght.FindByid(Convert.ToInt32(this.comboBox2.SelectedValue.ToString()));
                             pfmDataSet.sizesRow out_size = pfmDataSet.sizes.FindByid(Convert.ToInt32(this.comboBox3.SelectedValue.ToString()));
+                            pfmDataSet.sortRow out_sort = pfmDataSet.sort.FindByid(Convert.ToInt32(this.comboBoxSort.SelectedValue.ToString()));
                             pfmDataSet.prod_typesRow out_prod_types = pfmDataSet.prod_types.FindByid(Convert.ToInt32(this.comboBox4.SelectedValue.ToString()));
 
                             if (out_rasp.l1 != 0)
                             {
-                               
                                 pfmDataSet.output_productRow newProductRow;
-
                                 newProductRow = pfmDataSet.output_product.Newoutput_productRow();
                                 newProductRow.l = out_rasp.l1;
                                 newProductRow.w = out_size.w;
                                 newProductRow.h = out_size.h;
                                 newProductRow.type_product = out_prod_types.id;
+                                newProductRow.sort = out_sort.id;
                                 newProductRow.cnt = Math.Max(i1, i2);
                                 newProductRow.dt = DateTime.Now;
-                               //DateTime a = DateTime.UtcNow;
-
                                 this.pfmDataSet.output_product.Rows.Add(newProductRow);
-
                                 this.output_productTableAdapter.Update(this.pfmDataSet.output_product);
-                                
+                            }
+
+                            if (out_rasp.Isl2Null() != true)
+                            {
+                                pfmDataSet.output_productRow newProductRow;
+                                newProductRow = pfmDataSet.output_product.Newoutput_productRow();
+                                newProductRow.l = out_rasp.l2;
+                                newProductRow.w = out_size.w;
+                                newProductRow.h = out_size.h;
+                                newProductRow.type_product = out_prod_types.id;
+                                newProductRow.sort = out_sort.id;
+                                newProductRow.cnt = Math.Max(i3, i4);
+                                newProductRow.dt = DateTime.Now;
+                                this.pfmDataSet.output_product.Rows.Add(newProductRow);
+                                this.output_productTableAdapter.Update(this.pfmDataSet.output_product);
+                            }
+
+                            if (out_rasp.Isl3Null() != true)
+                            {
+                                pfmDataSet.output_productRow newProductRow;
+                                newProductRow = pfmDataSet.output_product.Newoutput_productRow();
+                                newProductRow.l = out_rasp.l3;
+                                newProductRow.w = out_size.w;
+                                newProductRow.h = out_size.h;
+                                newProductRow.type_product = out_prod_types.id;
+                                newProductRow.sort = out_sort.id;
+                                newProductRow.cnt = Math.Max(i5, i6);
+                                newProductRow.dt = DateTime.Now;
+                                this.pfmDataSet.output_product.Rows.Add(newProductRow);
+                                this.output_productTableAdapter.Update(this.pfmDataSet.output_product);
                             }
 
 
@@ -391,6 +417,8 @@ namespace PFM
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pfmDataSet.sort". При необходимости она может быть перемещена или удалена.
+            this.sortTableAdapter.Fill(this.pfmDataSet.sort);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "pfmDataSet.prod_types". При необходимости она может быть перемещена или удалена.
             this.prod_typesTableAdapter.Fill(this.pfmDataSet.prod_types);
             // TODO: This line of code loads data into the 'pfmDataSet.output_product' table. You can move, or remove it, as needed.
@@ -504,7 +532,7 @@ namespace PFM
 
                 try
                 {
-                    beg = DateTime.ParseExact(qscoll[0].ToString(), "yyyyMMddhhmmss", CultureInfo.InvariantCulture);
+                    beg = DateTime.ParseExact(qscoll[0].ToString(), "yyyyMMddHHmmss", CultureInfo.InvariantCulture);
                     begs = beg.ToString();
                 }
                 catch
@@ -515,7 +543,7 @@ namespace PFM
 
                 try
                 {
-                    end = DateTime.ParseExact(qscoll[1].ToString(), "yyyyMMddhhmmss", CultureInfo.InvariantCulture);
+                    end = DateTime.ParseExact(qscoll[1].ToString(), "yyyyMMddHHmmss", CultureInfo.InvariantCulture);
                     ends = end.ToString();
                 }
                 catch
@@ -537,12 +565,31 @@ namespace PFM
                     sql_resp = "123";
                     String q = "dt >= '" + begs + "' AND dt <='" + end + "'";
 
+                    //String q = "dt > '" + begs + "'";
+
+
+
                     DataRow[] dr = pfmDataSet.output_product.Select(q);
                     DataTable dtt = pfmDataSet.output_product;
 
-                    dr.CopyToDataTable<DataRow>(dtt, LoadOption.Upsert);
+                    if (dr.Count() > 0)
+                    {
+                        dtt = dr.CopyToDataTable();
+                        sql_resp = q + DataTableToJSON(dtt);
+                    }
+                    else
+                    {
+                        //dtt.Clear();
+                        sql_resp = "---";
+                    }
+                    
+                    //dtt.Reset();
 
-                    sql_resp = DataTableToJSON(dtt);
+                    //dr.CopyToDataTable<DataRow>(dtt, LoadOption.Upsert);
+
+                    //sql_resp = q;
+
+                    
 
                 }
 
@@ -696,6 +743,11 @@ namespace PFM
         }
 
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }
